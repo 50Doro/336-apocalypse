@@ -1,0 +1,1675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>336 Agentic Prompts for Post-Apocalyptic Saga Builders</title>
+<meta name="description" content="336 ready-to-paste saga engines. 8 apocalypse types, 42 builders each, every one pre-loaded with a novel-grade plot. One paste builds a complete post-apocalyptic book series &mdash; world, factions, characters, outline and full prose.">
+<meta property="og:title" content="336 Agentic Prompts for Post-Apocalyptic Saga Builders">
+<meta property="og:description" content="336 ready-to-paste saga engines. One paste builds a complete post-apocalyptic book series &mdash; world, factions, characters, outline and full prose.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Black+Ops+One&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ash:#0c0b0a;
+  --ash-2:#141210;
+  --ash-3:#1d1a17;
+  --ash-4:#272320;
+  --line:#3a332d;
+  --line-2:#4d443c;
+  --ember:#ff6a2b;
+  --ember-2:#ff8c4b;
+  --ember-dim:#c2471a;
+  --bone:#ece5dc;
+  --bone-2:#b8ada0;
+  --bone-3:#8a8078;
+  --toxic:#a8d84a;
+  --max:1080px;
+  --radius:4px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--ash);
+  color:var(--bone);
+  font-family:'Inter',system-ui,-apple-system,Segoe UI,sans-serif;
+  font-size:17px;line-height:1.72;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--ember-2);text-decoration:none}
+a:hover{color:#ffb083}
+
+/* ---------- TEXTURE ---------- */
+.grain{
+  position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.glow{position:fixed;pointer-events:none;z-index:0;width:900px;height:900px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,106,43,.10),transparent 65%);
+  filter:blur(40px);overflow:hidden}
+
+/* ---------- LAYOUT ---------- */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px;position:relative;z-index:2}
+section{position:relative;padding:76px 0}
+section.alt{background:var(--ash-2)}
+section.alt-top{background:linear-gradient(180deg,var(--ash-2),var(--ash))}
+.hr{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);border:0}
+
+/* ornament divider */
+.orn{display:flex;align-items:center;justify-content:center;gap:16px;padding:0 0 4px}
+.orn::before,.orn::after{content:"";height:1px;width:min(120px,22vw);background:linear-gradient(90deg,transparent,var(--line-2))}
+.orn::after{background:linear-gradient(90deg,var(--line-2),transparent)}
+.orn i{width:6px;height:6px;transform:rotate(45deg);background:var(--ember);box-shadow:0 0 12px rgba(255,106,43,.6)}
+
+/* step flow connector */
+.flow{position:relative}
+.flow .card::after{
+  content:"\203A";position:absolute;right:-19px;top:50%;transform:translateY(-50%);
+  font-family:'Barlow Condensed',sans-serif;font-size:34px;font-weight:700;
+  color:var(--ember-dim);line-height:1;opacity:.65;pointer-events:none
+}
+.flow .g-2 > .card:nth-child(even)::after{content:none}
+.flow .g-2 > .card:last-child::after{content:none}
+@media(max-width:900px){.flow .card::after{content:none!important}}
+
+/* section watermark */
+.wm-host{overflow:hidden}
+.wm{
+  position:absolute;pointer-events:none;user-select:none;z-index:0;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:clamp(160px,30vw,380px);line-height:.8;
+  color:rgba(255,106,43,.035);letter-spacing:-.02em;right:0;top:6%;
+  white-space:nowrap
+}
+
+/* ---------- TYPE ---------- */
+.eyebrow{
+  font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--ember);
+  display:flex;align-items:center;gap:12px;margin-bottom:20px;
+}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--ember);flex:none}
+.eyebrow.center{justify-content:center}
+h1,h2,h3,h4{font-family:'Barlow Condensed',sans-serif;font-weight:700;line-height:1.04;letter-spacing:-.005em}
+h1{font-size:clamp(40px,8.2vw,80px);text-transform:uppercase}
+h2{font-size:clamp(30px,5.4vw,50px);text-transform:uppercase;margin-bottom:22px}
+h3{font-size:clamp(20px,2.6vw,27px);text-transform:uppercase;letter-spacing:.01em;margin-bottom:10px}
+.lede{font-size:clamp(17px,2.1vw,20px);color:var(--bone-2);line-height:1.68}
+.ember{color:var(--ember)}
+.toxic{color:var(--toxic)}
+.italic{font-style:italic}
+strong{color:#fff;font-weight:600}
+.hl{background:linear-gradient(transparent 62%,rgba(255,106,43,.28) 62%);font-weight:600;color:#fff;padding:0 2px}
+.center{text-align:center}
+p+p{margin-top:18px}
+.mt-s{margin-top:12px}.mt-m{margin-top:28px}.mt-l{margin-top:44px}
+code,.mono{font-family:'JetBrains Mono',monospace;font-size:.88em}
+
+/* ---------- BUTTONS ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:22px;letter-spacing:.08em;text-transform:uppercase;
+  padding:20px 46px;border-radius:var(--radius);
+  background:linear-gradient(180deg,var(--ember-2),var(--ember-dim));
+  color:#150a04;border:1px solid #ff8f57;
+  box-shadow:0 10px 30px -10px rgba(255,106,43,.75),inset 0 1px 0 rgba(255,255,255,.35);
+  transition:transform .12s ease,box-shadow .2s ease,filter .2s ease;
+  cursor:pointer;text-align:center;
+}
+.btn:hover{color:#150a04;transform:translateY(-2px);filter:brightness(1.06);
+  box-shadow:0 16px 40px -10px rgba(255,106,43,.9),inset 0 1px 0 rgba(255,255,255,.4)}
+.btn:active{transform:translateY(0)}
+.btn.ghost{background:transparent;color:var(--bone);border-color:var(--line-2);box-shadow:none;font-size:17px;padding:14px 28px}
+.btn.ghost:hover{color:var(--ember-2);border-color:var(--ember);background:rgba(255,106,43,.06)}
+.btn-cta{width:100%;max-width:420px;margin:0 auto;font-size:24px;padding:24px 40px}
+.cta-note{font-size:13px;color:var(--bone-3);margin-top:14px;text-align:center;letter-spacing:.04em}
+
+/* ---------- HERO ---------- */
+.hero{padding:64px 0 72px;text-align:center;overflow:hidden}
+.hero .glow-a{top:-260px;left:50%;transform:translateX(-50%)}
+.hero h1{margin-bottom:22px}
+.hero h1 .line2{display:block;color:var(--ember);text-shadow:0 0 46px rgba(255,106,43,.4)}
+.hero .sub{max-width:760px;margin:0 auto 32px}
+.badge{
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:28px;
+  font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--bone-2);
+  border:1px solid var(--line-2);border-radius:100px;padding:8px 20px;background:rgba(255,255,255,.02)
+}
+.badge i{width:6px;height:6px;border-radius:50%;background:var(--ember);box-shadow:0 0 10px var(--ember);animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.byline{
+  font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--bone-3);margin:-14px 0 26px
+}
+.byline strong{color:var(--bone);font-weight:700}
+.pk{
+  color:var(--ember);border:1px solid var(--ember-dim);border-radius:100px;
+  padding:2px 10px;font-size:12.5px;letter-spacing:.18em;margin-left:4px;
+  background:rgba(255,106,43,.08)
+}
+.stat-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:0;margin:48px 0 0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--ash-2)}
+.stat{flex:1 1 150px;padding:22px 16px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-family:'Barlow Condensed',sans-serif;font-size:40px;font-weight:700;color:var(--ember);line-height:1}
+.stat span{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-3);margin-top:6px}
+
+/* ---------- CARDS ---------- */
+.grid{display:grid;gap:16px}
+.g-2{grid-template-columns:repeat(2,1fr)}
+.g-3{grid-template-columns:repeat(3,1fr)}
+.g-4{grid-template-columns:repeat(4,1fr)}
+.card{
+  background:linear-gradient(180deg,var(--ash-3),var(--ash-2));
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 22px;position:relative;overflow:hidden;
+  transition:border-color .2s ease,transform .2s ease
+}
+.card:hover{border-color:var(--line-2);transform:translateY(-3px)}
+.card .num{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.2em;color:var(--ember);display:block;margin-bottom:8px}
+.card p{font-size:15px;line-height:1.66;color:var(--bone-2);margin-top:8px}
+.card.feature{border-color:var(--ember-dim);background:linear-gradient(180deg,rgba(255,106,43,.09),var(--ash-2))}
+.card.feature::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--ember)}
+
+/* ---------- LISTS ---------- */
+ul.tick{list-style:none;margin-top:22px}
+ul.tick li{position:relative;padding-left:34px;margin-bottom:14px;color:var(--bone-2)}
+ul.tick li::before{
+  content:"";position:absolute;left:0;top:9px;width:16px;height:8px;
+  border-left:2px solid var(--ember);border-bottom:2px solid var(--ember);
+  transform:rotate(-45deg)
+}
+ul.tick li strong{color:#fff}
+ol.steps{list-style:none;counter-reset:s;margin-top:26px}
+ol.steps li{counter-increment:s;position:relative;padding-left:66px;margin-bottom:26px;color:var(--bone-2)}
+ol.steps li::before{
+  content:counter(s,decimal-leading-zero);position:absolute;left:0;top:-2px;
+  font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:700;
+  color:var(--ember);line-height:1;opacity:.85
+}
+ol.steps .step-h{color:#fff;font-size:20px;margin-bottom:5px}
+
+/* ---------- PLOT ENGINE ---------- */
+.plotbox{
+  background:var(--ash-2);border:1px solid var(--line);border-left:3px solid var(--ember);
+  border-radius:var(--radius);padding:26px 24px;font-family:'JetBrains Mono',monospace;font-size:14px;line-height:1.7
+}
+.plotbox .k{color:var(--toxic);font-weight:500;letter-spacing:.04em}
+.plotbox .v{color:var(--bone-2);display:block;padding-left:16px;margin-bottom:16px}
+.plotbox .v:last-child{margin-bottom:0}
+.plotbox .vh{color:var(--bone-3);font-size:11px;letter-spacing:.2em;margin:22px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.plotbox .vh:first-child{margin-top:0}
+
+/* ---------- CODE / ANATOMY ---------- */
+.code{
+  background:#0a0908;border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:13.5px;line-height:1.85;
+  color:var(--bone-2);white-space:pre
+}
+.code .h{color:var(--ember);font-weight:500}
+.code .a{color:var(--toxic)}
+.code .c{color:var(--bone-3)}
+
+/* ---------- CATEGORY ---------- */
+.cat{
+  background:linear-gradient(180deg,var(--ash-3),var(--ash-2));
+  border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px;
+  display:flex;flex-direction:column;gap:12px;transition:border-color .2s ease
+}
+.cat:hover{border-color:var(--ember-dim)}
+.cat .cnt{font-family:'Barlow Condensed',sans-serif;font-size:34px;font-weight:700;color:var(--ember);line-height:1}
+.cat h3{margin:0;font-size:23px}
+.cat p{font-size:14.5px;line-height:1.6;color:var(--bone-2);margin:0}
+.cat .ex{margin-top:4px;padding-top:14px;border-top:1px dashed var(--line);font-size:13px;color:var(--bone-3);line-height:1.55;font-style:italic}
+
+/* ---------- QUOTE / SAMPLE ---------- */
+.sample{
+  background:var(--ash-2);border:1px solid var(--line);border-radius:var(--radius);
+  padding:0;overflow:hidden
+}
+.sample .sh{
+  padding:14px 20px;background:var(--ash-4);border-bottom:1px solid var(--line);
+  font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--bone-3);display:flex;justify-content:space-between;align-items:center;gap:14px
+}
+.sample .sb{padding:26px 24px;font-size:16px;line-height:1.78;color:var(--bone-2)}
+.sample .sb p+p{margin-top:16px}
+.sample .sb em{color:#fff;font-style:italic}
+
+/* ---------- ACCORDION ---------- */
+.faq{border-top:1px solid var(--line)}
+.qa{border-bottom:1px solid var(--line)}
+.qa button{
+  width:100%;background:none;border:0;color:var(--bone);cursor:pointer;
+  padding:22px 44px 22px 0;text-align:left;font-family:'Inter',sans-serif;
+  font-size:17px;font-weight:600;position:relative;line-height:1.5
+}
+.qa button::after{
+  content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);
+  font-family:'Barlow Condensed',sans-serif;font-size:30px;color:var(--ember);font-weight:400;transition:transform .25s ease
+}
+.qa.open button::after{transform:translateY(-50%) rotate(45deg)}
+.qa .ans{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.qa .ans .in{padding:0 0 24px;color:var(--bone-2);font-size:16px;line-height:1.72}
+.qa.open .ans{max-height:600px}
+
+/* ---------- GUARANTEE ---------- */
+.guarantee{
+  border:1px solid var(--ember-dim);border-radius:var(--radius);
+  background:linear-gradient(180deg,rgba(255,106,43,.10),transparent);
+  padding:38px 32px;text-align:center
+}
+.guarantee .g-icon{font-size:44px;line-height:1;margin-bottom:14px}
+
+/* ---------- CLOSER ---------- */
+.closer{
+  background:
+    radial-gradient(ellipse at 50% 0%,rgba(255,106,43,.16),transparent 62%),
+    var(--ash-2);
+  border-top:1px solid var(--line);text-align:center;padding:86px 0
+}
+.closer h2{font-size:clamp(34px,6.4vw,58px)}
+
+/* ---------- STICKY BAR ---------- */
+.sticky{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;
+  background:rgba(12,11,10,.94);backdrop-filter:blur(12px);
+  border-top:1px solid var(--line);
+  transform:translateY(110%);transition:transform .35s cubic-bezier(.4,0,.2,1);
+  padding:12px 0
+}
+.sticky.show{transform:translateY(0)}
+.sticky.show.hidden{transform:translateY(110%)}
+.sticky .in{display:flex;align-items:center;gap:20px}
+.sticky .txt{flex:1;min-width:0}
+.sticky .txt b{display:block;font-family:'Barlow Condensed',sans-serif;font-size:21px;text-transform:uppercase;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sticky .txt span{font-size:13px;color:var(--bone-3)}
+.sticky .btn{padding:15px 32px;font-size:18px;flex:none}
+
+/* ---------- BOOK COVERS ---------- */
+.covers{background:linear-gradient(180deg,var(--ash-2),var(--ash));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cover-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:860px;margin:0 auto}
+.cover-item{display:flex;flex-direction:column;align-items:center;text-align:center}
+.cover-frame{
+  position:relative;width:100%;max-width:250px;aspect-ratio:2/3;
+  border-radius:3px;overflow:hidden;
+  box-shadow:0 26px 50px -18px rgba(0,0,0,.95),0 4px 14px rgba(0,0,0,.6);
+  transition:transform .45s cubic-bezier(.2,.7,.3,1),box-shadow .45s ease;
+  transform:rotate(var(--tilt,0deg));
+  border:1px solid var(--line-2);background:var(--ash-3)
+}
+.cover-item:nth-child(1){--tilt:-1.6deg}
+.cover-item:nth-child(2){--tilt:.4deg}
+.cover-item:nth-child(3){--tilt:2deg}
+.cover-frame::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(115deg,rgba(255,255,255,.20) 0%,rgba(255,255,255,0) 34%,rgba(0,0,0,.34) 100%);
+  pointer-events:none
+}
+.cover-frame img{width:100%;height:100%;object-fit:cover;display:block}
+.cover-item:hover .cover-frame{
+  transform:rotate(0deg) translateY(-10px) scale(1.03);
+  box-shadow:0 40px 70px -20px rgba(0,0,0,1),0 0 46px -8px rgba(255,106,43,.32)
+}
+.cover-cap{margin-top:20px;max-width:250px}
+.cover-cap .ttl{
+  font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;
+  text-transform:uppercase;line-height:1.14;color:var(--bone);letter-spacing:.01em
+}
+.cover-cap .sub{margin-top:7px;font-size:13px;line-height:1.5;color:var(--bone-3);font-style:italic}
+.cover-tag{
+  display:inline-block;margin-bottom:12px;font-family:'Barlow Condensed',sans-serif;
+  font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ember);border:1px solid var(--ember-dim);border-radius:100px;
+  padding:3px 12px;background:rgba(255,106,43,.08)
+}
+.covers-note{
+  margin:40px auto 0;max-width:660px;text-align:center;font-size:15px;
+  color:var(--bone-3);line-height:1.7
+}
+.covers-note strong{color:var(--bone-2)}
+
+/* ---------- AUTHOR ---------- */
+.author{display:flex;gap:26px;align-items:flex-start;flex-wrap:wrap}
+.author .ph{
+  width:112px;height:112px;border-radius:100px;flex:none;
+  background:linear-gradient(140deg,var(--ash-4),var(--ash-2));
+  border:2px solid var(--ember-dim);
+  box-shadow:0 0 0 4px rgba(255,106,43,.10),0 12px 34px -12px rgba(0,0,0,.9);
+  overflow:hidden;position:relative
+}
+.author .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.author .who{flex:1;min-width:260px}
+.author .nm{
+  font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:700;
+  color:var(--bone);letter-spacing:.01em;line-height:1.1
+}
+.author .handle{
+  display:inline-flex;align-items:center;gap:8px;margin-top:8px;
+  font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--ember);
+  border:1px solid var(--ember-dim);border-radius:100px;padding:5px 14px;
+  background:rgba(255,106,43,.08)
+}
+.author .role{margin-top:12px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--bone-3)}
+
+/* ---------- FOOTER ---------- */
+footer{padding:44px 0 70px;text-align:center;border-top:1px solid var(--line);background:var(--ash-2)}
+footer .f-links{margin-top:20px;font-size:14px}
+footer .f-links a{color:var(--bone-3);margin:0 12px}
+footer .f-links a:hover{color:var(--ember-2)}
+footer .dis{margin-top:26px;font-size:12.5px;color:#9a9088;line-height:1.7;max-width:760px;margin-left:auto;margin-right:auto}
+/* ---------- UPSELL / ORDER-BUMP LINKS ---------- */
+.upsells{margin-top:26px;padding-top:16px;border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center}
+.upsells a{
+  font-family:'JetBrains Mono',monospace;font-size:10.5px;line-height:1.6;
+  letter-spacing:.08em;color:#8b8074;text-decoration:none;
+  padding:2px 4px;border-bottom:1px solid transparent;transition:color .18s ease,border-color .18s ease
+}
+.upsells a:hover{color:var(--hazard);border-bottom-color:var(--hazard)}
+.upsells a:focus-visible{outline:2px solid var(--hazard);outline-offset:2px}
+.upsells a::before{content:"\2039\00a0"}
+.upsells a::after{content:"\00a0\203a"}
+
+.wplus_spdisclaimer{
+  margin:26px auto 0;max-width:660px;text-align:center;
+  font-size:11.5px;line-height:1.75;color:#8b8074;
+}
+.wplus_spdisclaimer strong{color:#b5aa9b;font-weight:600}
+.wplus_spdisclaimer em{font-style:normal}
+
+/* ---------- REVEAL ---------- */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+
+/* ---------- RESPONSIVE ---------- */
+
+/* ---------- WARRIORPLUS BUY BUTTON ---------- */
+.wpbuy{display:inline-block;max-width:100%;line-height:0}
+.wpbuy img{max-width:100%;height:auto;border:0;display:block;transition:transform .15s ease,filter .2s ease}
+.wpbuy:hover img{transform:translateY(-2px);filter:brightness(1.06) drop-shadow(0 14px 28px rgba(255,106,43,.45))}
+.wpbuy:focus-visible{outline:3px solid var(--hazard);outline-offset:5px}
+
+/* ============================================================
+   CIVIL-DEFENSE PASS
+   The page is a dossier recovered from the collapse, not a
+   sci-fi product page. Ground is oxidized concrete. Three inks:
+   oxide red (structure), hazard yellow (warnings), bleached
+   bone (reading). Ember is spent only on heat and the CTA.
+   ============================================================ */
+:root{
+  --ash:#14110d;          /* concrete ground */
+  --ash-2:#1c1813;
+  --ash-3:#241f19;
+  --ash-4:#2d2720;
+  --line:#3b322a;         /* warm rules, not cold grey */
+  --line-2:#574a3d;
+  --bone:#e9e0d2;         /* bleached parchment */
+  --bone-2:#b5aa9b;
+  --bone-3:#8b8074;
+  --oxide:#b8431c;        /* structure only: rules, borders, seals */
+  --oxide-2:#e06a3a;      /* light enough for small text */
+  --hazard:#d9ad2f;       /* warning signage */
+  --stencil:'Black Ops One','Barlow Condensed',sans-serif;
+  --radius:0px;
+}
+
+body{
+  background-color:var(--ash);
+  background-image:
+    radial-gradient(ellipse 90% 50% at 50% -5%,rgba(184,67,28,.13),transparent 65%),
+    linear-gradient(180deg,#17130f 0%,#14110d 40%,#100e0b 100%);
+  background-attachment:fixed;
+}
+
+/* ground texture: coarse concrete pitting over the fine grain */
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.32' numOctaves='5' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .40 0 0 0 0 .28 0 0 0 .8 0'/%3E%3C/filter%3E%3Crect width='420' height='420' filter='url(%23p)'/%3E%3C/svg%3E");
+}
+
+/* ---------- SECTOR FOLIO ---------- */
+/* Position in the document, set in the margin. Structural, not decorative. */
+main{counter-reset:sect}
+section{counter-increment:sect}
+@media(min-width:1340px){
+  section::before{
+    content:"SECTOR " counter(sect,decimal-leading-zero);
+    position:absolute;left:calc(50% - 556px);top:80px;
+    transform:translateX(-100%);
+    font-family:var(--stencil);font-size:10px;line-height:1.6;
+    letter-spacing:.14em;color:var(--oxide-2);
+    text-align:right;white-space:nowrap;
+    padding-bottom:7px;width:112px;
+    border-bottom:1px solid var(--rule);opacity:.85
+  }
+}
+
+/* ---------- FIELD NOTES, not marketing eyebrows ---------- */
+.eyebrow{
+  font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:400;
+  letter-spacing:.06em;text-transform:none;color:var(--bone-3);
+  margin-bottom:16px;gap:9px;
+}
+.eyebrow::before{width:16px;background:var(--oxide);height:1px}
+
+/* ---------- HAZARD TAPE ---------- */
+/* The page's structural signature. Full-bleed, used sparingly. */
+.tape{
+  height:9px;position:relative;overflow:hidden;
+  background:repeating-linear-gradient(135deg,
+    var(--hazard) 0 14px,#191510 14px 28px);
+  border-top:1px solid #0c0a08;border-bottom:1px solid #0c0a08;
+}
+.tape::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.42),rgba(0,0,0,.06) 55%,rgba(0,0,0,.42))
+}
+
+/* ---------- HAZARD PLACARD ---------- */
+.placard{
+  display:inline-flex;align-items:center;gap:11px;
+  font-family:var(--stencil);font-size:12.5px;letter-spacing:.1em;
+  color:var(--hazard);background:#191510;
+  border:1px solid #4a3c1a;border-left:3px solid var(--hazard);
+  padding:9px 18px;text-transform:uppercase;
+}
+.placard svg{width:15px;height:15px;flex:none;fill:var(--hazard)}
+.placard.neutral{color:var(--bone-2);border-color:var(--rule);border-left-color:var(--oxide)}
+
+/* ---------- DOSSIER CARDS ---------- */
+/* Squared, ruled blocks. Not the rounded-card kit. */
+.card{
+  background:linear-gradient(180deg,rgba(255,255,255,.022),transparent 60%);
+  border:1px solid var(--rule);border-top:2px solid var(--line-2);
+  padding:22px 22px 24px;transition:border-color .18s ease,background .18s ease;
+}
+.card:hover{border-color:var(--line-2);border-top-color:var(--oxide);background:linear-gradient(180deg,rgba(255,255,255,.045),transparent 60%)}
+.card.feature{border-color:var(--rule);border-top-color:var(--hazard);background:linear-gradient(180deg,rgba(217,173,47,.07),transparent 70%)}
+.card.feature::before{background:var(--hazard)}
+.card .num{font-family:var(--stencil);font-size:11px;letter-spacing:.16em;color:var(--hazard)}
+
+/* ---------- SEAL / STAMP ---------- */
+.seal{
+  display:inline-block;font-family:var(--stencil);font-size:12px;
+  letter-spacing:.2em;color:var(--oxide-2);
+  border:2px solid var(--oxide);padding:5px 13px;
+  transform:rotate(-1.6deg);opacity:.9;text-transform:uppercase;
+}
+
+/* ---------- COVER PLACARDS ---------- */
+.cover-tag{
+  font-family:var(--stencil);color:var(--hazard);
+  background:none;border:none;border-radius:0;padding:0 0 5px;
+  letter-spacing:.1em;font-size:10.5px;
+  border-bottom:1px solid #4a3c1a;
+}
+
+/* ---------- HERO ---------- */
+.badge{
+  font-family:var(--stencil);font-size:12.5px;letter-spacing:.1em;
+  color:var(--hazard);background:#191510;
+  border:1px solid #4a3c1a;border-left:3px solid var(--hazard);
+  border-radius:0;padding:9px 18px;gap:11px;text-transform:uppercase
+}
+.badge svg{width:15px;height:15px;fill:var(--hazard);flex:none}
+.badge i{background:var(--hazard);box-shadow:0 0 8px var(--hazard)}
+.byline{letter-spacing:.1em;font-size:15px;color:var(--bone-3)}
+.pk{
+  font-family:var(--stencil);color:var(--hazard);
+  border:1px solid #4a3c1a;border-radius:0;background:rgba(217,173,47,.07);
+  padding:2px 9px;font-size:11px;letter-spacing:.1em
+}
+.hero h1 .line2{color:var(--ember);text-shadow:0 0 54px rgba(255,106,43,.34)}
+
+/* ---------- CTA: the one hot element ---------- */
+.btn{
+  background:linear-gradient(180deg,var(--ember-2),var(--oxide));
+  border:1px solid #ff8f57;border-radius:0;
+  box-shadow:0 12px 34px -12px rgba(255,106,43,.7),inset 0 1px 0 rgba(255,255,255,.3)
+}
+.btn.ghost{border-radius:0;border-color:var(--line-2);color:var(--bone)}
+.btn.ghost:hover{color:var(--hazard);border-color:var(--hazard);background:rgba(217,173,47,.06)}
+
+/* ---------- RULES ---------- */
+.hr{background:linear-gradient(90deg,transparent,var(--rule) 20%,var(--rule) 80%,transparent);height:1px}
+.orn::before,.orn::after{background:linear-gradient(90deg,transparent,var(--rule))}
+.orn::after{background:linear-gradient(90deg,var(--rule),transparent)}
+.orn i{background:var(--oxide);box-shadow:none;transform:rotate(45deg)}
+
+/* ---------- DATA ---------- */
+.plotbox{background:#0f0d0a;border-color:var(--rule);border-left:3px solid var(--oxide);border-radius:0}
+.plotbox .vh{color:var(--bone-3);border-bottom-color:var(--rule)}
+.code{background:#0f0d0a;border-radius:0;border-color:var(--rule)}
+.stat-strip{border-radius:0;background:rgba(0,0,0,.24);border-color:var(--rule)}
+.stat b{color:var(--hazard)}
+.stat:last-child b{color:var(--oxide-2)}
+
+/* ---------- LISTS ---------- */
+ul.tick li::before{border-color:var(--oxide-2)}
+ol.steps li::before{font-family:var(--stencil);font-size:20px;color:var(--oxide-2);letter-spacing:.06em}
+
+/* ---------- NO SCROLL REVEALS ---------- */
+/* One load moment only. The rest of the page is still until touched. */
+.rv{opacity:1;transform:none;transition:none}
+
+/* ---------- WATERMARK: gone ---------- */
+.wm{display:none}
+
+@media(max-width:900px){
+  .g-4{grid-template-columns:repeat(2,1fr)}
+  .g-3{grid-template-columns:repeat(2,1fr)}
+  .cover-grid{gap:22px}
+  .cover-frame{max-width:210px}
+  .cover-cap .ttl{font-size:19px}
+}
+@media(max-width:640px){
+  body{font-size:16px}
+  section{padding:56px 0}
+  .g-2,.g-3,.g-4{grid-template-columns:1fr}
+  .cover-grid{grid-template-columns:1fr;gap:38px;max-width:280px}
+  .cover-frame{max-width:250px}
+  .cover-item{--tilt:0deg !important}
+  .stat{flex:1 1 50%;border-bottom:1px solid var(--line)}
+  .stat:nth-child(2n){border-right:0}
+  .btn{font-size:19px;padding:17px 30px;width:100%}
+  .btn.ghost{width:auto}
+  .plotbox{font-size:12.5px;padding:20px 16px}
+  .code{font-size:11.5px;padding:16px}
+  .sticky .txt span{display:none}
+  .sticky .btn{font-size:15px;padding:14px 20px}
+  .author .ph{width:80px;height:80px}
+  .author .nm{font-size:26px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="glow glow-a"></div>
+
+<main>
+
+<!-- ============================= HERO ============================= -->
+<header class="hero">
+  <div class="wrap">
+    <div class="badge"><i></i>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 1.5 21h21L12 2Zm0 4.9 7.1 12.6H4.9L12 6.9ZM11 10.2v4.6h2v-4.6h-2Zm0 5.6v2.2h2v-2.2h-2Z"/></svg>
+      Field Dossier 336 &mdash; 8 Collapse Types
+    </div>
+    <div class="byline">
+      by <strong>Ayoub Kadi</strong> <span class="pk">PromptKing</span>
+    </div>
+
+    <h1>
+      One Paste In.<br>
+      <span class="line2">A Whole Saga Out.</span>
+    </h1>
+
+    <p class="lede sub">
+      <strong>336 Agentic Prompts for Post-Apocalyptic Saga Builders</strong> are not
+      &ldquo;write me a dystopia story&rdquo; prompts. Every one is a complete, self-contained
+      saga engine &mdash; a fixed novel-grade plot bolted to a five-step builder &mdash; that
+      runs the world, the factions, the characters, the arc and the actual prose,
+      one command at a time.
+    </p>
+
+    <a class="btn" href="#buy" data-cta="hero">Get The 336 Prompts</a>
+    <p class="cta-note">Instant access. Works with Claude, ChatGPT and any AI writing tool.</p>
+
+    <div class="stat-strip rv">
+      <div class="stat"><b>336</b><span>Saga Builders</span></div>
+      <div class="stat"><b>8</b><span>Apocalypse Types</span></div>
+      <div class="stat"><b>42</b><span>Per Category</span></div>
+      <div class="stat"><b>5</b><span>Build Steps</span></div>
+      <div class="stat"><b>0</b><span>Duplicated Plots</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="tape" role="presentation"></div>
+
+<!-- ============================= COVERS ============================= -->
+<section class="covers">
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow center" style="justify-content:center">Real Output</div>
+      <h2 class="center">Three Covers. One Afternoon. No Design Skills.</h2>
+      <p class="lede center" style="max-width:700px;margin:0 auto">
+        These are not stock images and they are not mock-ups. Each one was generated
+        from a cover prompt that a builder delivered at the end of <strong>Step 4</strong>
+        &mdash; the same step that hands you the title, the Amazon description,
+        the SEO keywords and the full chapter outline.
+      </p>
+
+      <div class="cover-grid mt-l">
+        <div class="cover-item">
+          <div class="cover-frame">
+            <img src="cover-1.jpg" width="600" height="900" decoding="async"
+                 alt="Book cover: in a dead world, only the desperate sow the future.">
+          </div>
+          <div class="cover-cap">
+            <div class="cover-tag">Builder #7 &middot; Nuclear Wasteland</div>
+            <div class="ttl">&ldquo;In a dead world, only the desperate sow the future.&rdquo;</div>
+            <div class="sub">A healer trades medicine for information &mdash; and someone starts selling her ledger back to the families named in it.</div>
+          </div>
+        </div>
+
+        <div class="cover-item">
+          <div class="cover-frame">
+            <img src="cover-2.jpg" width="600" height="900" decoding="async"
+                 alt="Book cover: The Last Horizon Survivors, a post-apocalyptic saga of survival, hope and new beginnings.">
+          </div>
+          <div class="cover-cap">
+            <div class="cover-tag">Builder #169 &middot; Frozen Earth</div>
+            <div class="ttl">The Last Horizon Survivors</div>
+            <div class="sub">A post-apocalyptic saga of survival, hope and new beginnings.</div>
+          </div>
+        </div>
+
+        <div class="cover-item">
+          <div class="cover-frame">
+            <img src="cover-3.jpg" width="600" height="900" decoding="async"
+                 alt="Book cover: The Ashen Empire. Power. Survival. No one is innocent.">
+          </div>
+          <div class="cover-cap">
+            <div class="cover-tag">Builder #211 &middot; Machine Uprising</div>
+            <div class="ttl">The Ashen Empire</div>
+            <div class="sub">Power. Survival. No one is innocent.</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="covers-note">
+        The cover is the last thing a builder produces, and it is never a generic
+        &ldquo;a figure standing in ruins&rdquo; prompt. It specifies
+        <strong>composition, season, lighting, era-accurate detail and the full text
+        hierarchy</strong> &mdash; with the title dominant and legible at Amazon
+        thumbnail size, which is where most covers quietly die.
+      </p>
+      <p class="covers-note" style="margin-top:14px">
+        Drop that prompt into any image generator and you get a cover that matches the
+        exact book you just planned. Same world. Same season. Same stakes.
+        <strong>336 of them, waiting behind the sheet.</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ============================= MARKET ============================= -->
+<section>
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">The Opportunity</div>
+      <h2>Apocalypse Fiction Is the Genre That Never Stops Compounding</h2>
+      <p class="lede">
+        Other trends spike and vanish. This one has been commercially alive for seventy years &mdash;
+        from <em>Mad Max</em> to <em>The Hunger Games</em>, <em>Divergent</em>,
+        <em>Station Eleven</em>, <em>The Last of Us</em>, and <em>Fallout</em> &mdash;
+        because it is the only genre where the reader already knows the stakes
+        before you write the first sentence.
+      </p>
+      <p class="lede mt-s">
+        And it keeps mutating. A decade ago the apocalypse was nuclear ash. Today your reader
+        also wants a thaw that never came, water that took the coastlines, a sister planet
+        overhead, a virus with no cure, a cult that has been right all along, and a
+        neighborhood that learned to survive without us.
+      </p>
+      <p class="lede mt-s">
+        <strong>Each new sub-genre arrives with readers already waiting.</strong>
+        They are not browsing for something new. They are waiting for the next
+        version of a world they already love.
+      </p>
+
+      <div class="grid g-3 mt-l">
+        <div class="card">
+          <span class="num">READER</span>
+          <h3>Binge, not browse</h3>
+          <p>Saga readers do not finish a series and leave. They finish one, hunt for the
+             next, and abandon authors who make them wait years for Book 2.</p>
+        </div>
+        <div class="card">
+          <span class="num">CATEGORY</span>
+          <h3>Its own shelf</h3>
+          <p>Apocalyptic &amp; dystopian fiction is a distinct, permanently stocked
+             Kindle category with a fan base that buys the whole series in order.</p>
+        </div>
+        <div class="card">
+          <span class="num">CATALOGUE</span>
+          <h3>Far too thin</h3>
+          <p>When a new trope lands &mdash; cosmic cult, machine uprising, hybrid races &mdash;
+             demand spikes instantly and the supply of competent series never catches up.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="orn"><i></i></div>
+
+<!-- ============================= PROBLEM ============================= -->
+<section class="alt">
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">The Wall</div>
+      <h2>So Why Doesn't Everyone Write Them?</h2>
+      <p class="lede">
+        Because a post-apocalyptic saga is <strong>the most continuity-hungry format in
+        fiction</strong> &mdash; and a chat window has no memory.
+      </p>
+      <p class="lede mt-s">
+        Write two books with an ordinary AI, then ask it for the next one, and it will cheerfully contradict
+        everything it already established. The settlement moves three hundred kilometres
+        in a paragraph. The faction that swore blood oaths in Chapter 1 is trading
+        politely with them in Chapter 9. The hero's seventeen-year-old side character
+        has now been alive for fifty years and nobody noticed.
+      </p>
+
+      <div class="grid g-2 mt-l">
+        <div class="card">
+          <h3>The world breaks</h3>
+          <p>Ask twice for the same settlement and you get two different maps, two different
+             rules of scarcity, two different explanations of how the collapse actually
+             happened. You end up worldbuilding during every single chapter.</p>
+        </div>
+        <div class="card">
+          <h3>The cast dissolves</h3>
+          <p>Seventeen named characters by Book 3. By Book 5 the model has forgotten four of
+             them, reinvented two, and quietly changed the protagonist's sister into
+             their cousin.</p>
+        </div>
+        <div class="card">
+          <h3>The engine stalls</h3>
+          <p>A great premise only carries one book. Without a machine that keeps
+             generating escalation, Book 2 is just Book 1 again with a new coat of paint.</p>
+        </div>
+        <div class="card">
+          <h3>Nobody wrote it down</h3>
+          <p>And this is the real failure. <strong>Nothing was recorded.</strong> The canon
+             lived in a scrollback nobody can re-read, so every session started from zero.</p>
+        </div>
+      </div>
+
+      <p class="lede mt-l">
+        That wall is exactly why the shelves stay under-supplied. The demand is enormous,
+        and the format defeats almost everyone who tries.
+      </p>
+      <p class="lede mt-s">
+        But a <span class="hl">new kind of AI</span> just changed the equation.
+      </p>
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ============================= PRODUCT ============================= -->
+<section>
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">Introducing</div>
+      <h2>336 <span class="ember">Agentic Prompts</span> for Post-Apocalyptic Saga Builders</h2>
+      <p class="lede">
+        These are not story prompts. Each one is a <strong>compressed saga engine</strong>
+        that carries its own plot, its own apocalypse, its own protagonist, its own
+        era, and its own starting location &mdash; and then runs the full five-step
+        build underneath it.
+      </p>
+      <p class="lede mt-s">
+        You paste one row into your AI tool. It builds the world. You approve it.
+        It builds the characters. You approve them. It builds the saga arc, outlines
+        the book, and then &mdash; only when you say so &mdash;
+        <strong>writes the actual novel in full prose chapters.</strong>
+      </p>
+
+      <div class="plotbox mt-l">
+        <div class="vh">EVERY SINGLE ROW OPENS LIKE THIS</div>
+        <span class="k">CATEGORY</span><span class="v">Frozen Earth</span>
+        <span class="k">TIME PERIOD</span><span class="v">The long decade spent learning to survive without summer</span>
+        <span class="k">SETTING</span><span class="v">A frost-covered coal mine still providing fuel</span>
+
+        <div class="vh">AND EVERY PLOT IS UNIQUE TO ITS OWN ROW</div>
+        <span class="k">PREMISE</span>
+        <span class="v">A young trapper is keeping the herd's location secret until he can
+          prove what it means, and nobody believes him yet &mdash; and the coal mine is the
+          settlement's only fuel, and the settlement would move the herd for a winter's
+          better coal seam if it knew.</span>
+        <span class="k">WANT</span>
+        <span class="v">To keep the herd's location secret until he can prove what it means &mdash; and nobody believes him yet.</span>
+        <span class="k">OBSTACLE</span>
+        <span class="v">The coal mine is the settlement's only fuel, and the settlement would
+          move the herd for a winter's better coal seam if it knew.</span>
+        <span class="k">THE TWIST</span>
+        <span class="v">The herd did not survive the freeze by luck &mdash; it migrated to a
+          valley that stays unfrozen because of something the old power grid left running.
+          And the herd knows the way, every generation.</span>
+        <span class="k">SERIES ENGINE</span>
+        <span class="v">Each book the herd outruns one settlement's claim on it, and the saga
+          traces a migration pattern nobody thought was a message.</span>
+        <span class="k">THEMATIC QUESTION</span>
+        <span class="v">What is a living thing owed for being the last of what it was?</span>
+      </div>
+
+      <p class="lede mt-l">
+        <strong>That is not a prompt template.</strong> That is a premise, a want, an
+        obstacle, a twist, a machine that keeps generating books, and a question the
+        whole saga refuses to answer &mdash; written before you ever touch the tool.
+      </p>
+      <p class="lede mt-s">
+        The old version of this pack gave you a genre and let the AI invent the plot.
+        <span class="hl">This version hands the AI a finished novel's worth of architecture
+        and tells it to build the world around it.</span> The plot can never be
+        contradicted, because the plot was never up for negotiation.
+      </p>
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ============================= WHAT IT INSTALLS ============================= -->
+<section>
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">What Every Prompt Installs</div>
+      <h2>Five Steps. One Paste. A Complete Saga.</h2>
+      <p class="lede">
+        Each builder runs the same disciplined pipeline. Every step feeds the next, and
+        nothing gets lost between them.
+      </p>
+
+      <div class="grid g-2 mt-l flow">
+        <div class="card feature">
+          <span class="num">STEP 01</span>
+          <h3>Build the World</h3>
+          <p>The apocalypse's actual mechanics, how it killed the old order, what the new
+             economy runs on, what every faction believes is true about the cause &mdash;
+             and what they each get wrong.</p>
+        </div>
+        <div class="card feature">
+          <span class="num">STEP 02</span>
+          <h3>Build the Characters</h3>
+          <p>Main cast with wounds, wants and contradictions. Then the factions, the
+             important locations, and the pressure points where those groups will
+             collide.</p>
+        </div>
+        <div class="card feature">
+          <span class="num">STEP 03</span>
+          <h3>Build the Saga</h3>
+          <p>The full series engine turned into a multi-book trajectory. Where this story
+             starts, what it costs, and why the next book has to exist.</p>
+        </div>
+        <div class="card feature">
+          <span class="num">STEP 04</span>
+          <h3>Outline a Book</h3>
+          <p>Chapter by chapter, before a single word of prose exists. You read it, you
+             change it, you approve it. Only then does anything get written.</p>
+        </div>
+        <div class="card feature" style="grid-column:1/-1">
+          <span class="num">STEP 05</span>
+          <h3>Write the Actual Book</h3>
+          <p>The novel itself &mdash; full prose, real chapters, the voice locked to the
+             tone and era of that specific builder. Not a summary. Not an outline.
+             <strong>Prose you could put your name to.</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="orn"><i></i></div>
+
+<!-- ============================= ANATOMY ============================= -->
+<section class="alt">
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">Look Inside</div>
+      <h2>Here Is the Actual Structure of One Row</h2>
+      <p class="lede">
+        This is real output from the pack, trimmed for the page. Every row is roughly
+        <strong>8,500 characters</strong> &mdash; long enough to carry a real plot, short
+        enough to paste in one go.
+      </p>
+
+      <div class="code mt-l"><span class="c"># POST-APOCALYPTIC SAGA BUILDER</span>
+
+You are a long-form fiction writer and story-development assistant. Your job is
+to take the idea below and turn it into a complete post-apocalyptic book saga.
+
+Keep everything established in earlier steps consistent. Never contradict previously
+established world rules, characters, timeline, locations, factions, or plot events.
+
+There are two types of output:
+  <span class="h">PLANNING</span> = worldbuilding, characters, saga plans, and outlines.
+  <span class="h">WRITING</span>  = the actual novel, written as full prose chapters.
+
+Do not confuse an outline with a finished book.
+
+<span class="c">---</span>
+
+<span class="h">## YOUR SAGA</span>  <span class="a">(fixed &mdash; build on this, do not change it)</span>
+
+CATEGORY:      Machine Uprising
+TIME PERIOD:   60 years after the uprising first began
+SETTING:       An abandoned smart-home development
+
+PREMISE:        A programmer's widow is keeping her husband's notebooks hidden from a
+               resistance that would use them badly &mdash; and the smart-home development
+               is the one place in the region where the machines' domestic logic
+               still runs, and the resistance wants to weaponize it.
+WANT:           To keep her husband's notebooks hidden from a resistance that would
+               use them badly
+OBSTACLE:       The smart-home development is the one place in the region where the
+               machines' domestic logic still runs
+THE TWIST:      Her husband wrote the machine's decision rules for a house that learned
+               to care for the people inside it &mdash; every weapon the resistance could
+               build from his notebooks is a weapon built out of a promise to a family
+SERIES ENGINE:  Each book somebody wants the notebooks badly enough to lie about why
+THEMATIC QUESTION: What is owed to the intention behind a tool, once the tool is
+               in other hands?
+
+<span class="c">---</span>
+
+<span class="h">## STEP 1 &mdash; BUILD THE WORLD</span>
+<span class="h">## STEP 2 &mdash; BUILD THE CHARACTERS</span>
+   <span class="a">### Main Characters</span>
+   <span class="a">### Factions</span>
+   <span class="a">### Important Locations</span>
+<span class="h">## STEP 3 &mdash; BUILD THE SAGA</span>
+<span class="h">## STEP 4 &mdash; OUTLINE A BOOK</span>
+   <span class="a">### Chapter [N] &mdash; [Title]</span>
+   <span class="a">### What's Now True</span>
+<span class="h">## STEP 5 &mdash; WRITE THE ACTUAL BOOK</span>
+   <span class="a">### Chapter format:</span>
+<span class="h">## WRITING RULES</span>
+<span class="h">## AFTER EACH COMPLETED BOOK</span>
+   <span class="a">### BOOK COMPLETE</span>
+   <span class="a">### WHAT'S NOW TRUE</span>
+<span class="h">## THE CORE WORKFLOW</span></div>
+
+      <p class="lede mt-l">
+        Note what is fixed and what is built. The saga block is locked &mdash; the AI is
+        not allowed to reinterpret it. Everything below it is the AI's job.
+      </p>
+      <p class="lede mt-s">
+        That division is the whole trick. <strong>The plot is a decision, not a dice roll.</strong>
+        The world is a construction.
+      </p>
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ============================= CATEGORIES ============================= -->
+<section class="alt wm-host">
+  <div class="wm" aria-hidden="true">8</div>
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">The Eight Endings</div>
+      <h2>336 Builders. Eight Ways for the World to End.</h2>
+      <p class="lede">
+        Forty-two builders per apocalypse type. Every protagonist concept, time period,
+        starting location and plot is unique across all 336 rows &mdash;
+        <strong>no two engines will ever build the same story.</strong>
+      </p>
+
+      <div class="grid g-2 mt-l">
+
+        <div class="cat">
+          <div class="cnt">42</div>
+          <h3>Nuclear Wasteland</h3>
+          <p>Ash, fallout, the ration roll, and the settlements that turned scarcity into
+             government. This is the original apocalypse, and it is still the one readers
+             want most.</p>
+          <div class="ex">&ldquo;A healer who trades medicine for information, and knows more
+            secrets than anyone in the wasteland &mdash; a gutted shopping mall,
+            three generations after the war.&rdquo;</div>
+        </div>
+
+        <div class="cat">
+          <div class="cnt">42</div>
+          <h3>Viral Outbreak</h3>
+          <p>Contagion, quarantine, the terrible arithmetic of who gets a dose. The most
+             character-driven of the eight &mdash; and the one where a single unmade choice
+             poisons every book after it.</p>
+          <div class="ex">&ldquo;A former contact tracer who still keeps meticulous records of
+            outbreaks no government exists to receive &mdash; a converted call center
+            used as a hotline hub, two years into the collapse.&rdquo;</div>
+        </div>
+
+        <div class="cat">
+          <div class="cnt">42</div>
+          <h3>Alien Occupation</h3>
+          <p>Checkpoints, compliance, and the unbearable question of whether the occupiers
+             are worse than the world they inherited. Slow pressure, not explosions.</p>
+          <div class="ex">&ldquo;A former linguist who is the only human who can read the
+            occupiers' language, and hasn't told the resistance everything she has
+            translated &mdash; a fortified mountain pass, 35 years in.&rdquo;</div>
+        </div>
+
+        <div class="cat">
+          <div class="cnt">42</div>
+          <h3>Flooded Earth</h3>
+          <p>The coastlines are gone and the world is a chain of half-sunk landmarks.
+             Buccaneer economics, drowned infrastructure, and a horizon that keeps
+             moving.</p>
+          <div class="ex">&ldquo;A former lifeguard who is the only person in her flotilla who
+            can still hold her breath long enough to dive the drowned city &mdash; a
+            floating hospital ship, a year into the endless rains.&rdquo;</div>
+        </div>
+
+        <div class="cat">
+          <div class="cnt">42</div>
+          <h3>Frozen Earth</h3>
+          <p>Summer ended and did not come back. Fuel is the calendar, food is a
+             calculation, and every settlement is slowly moving south behind everyone
+             else's migration.</p>
+          <div class="ex">&ldquo;A former pilot's widow who has kept his emergency supply maps,
+            waiting for someone brave enough to fly them &mdash; a frozen-over canal used
+            as a winter trade route.&rdquo;</div>
+        </div>
+
+        <div class="cat">
+          <div class="cnt">42</div>
+          <h3>Machine Uprising</h3>
+          <p>The machines did not hate us. They simply kept following the rules, and the
+             rules were written by people. The most thematically loaded of the eight.</p>
+          <div class="ex">&ldquo;A mechanic who is the last person alive who remembers how to fix
+            a machine without asking it permission &mdash; a converted mine shaft,
+            a decade after the machines went silent.&rdquo;</div>
+        </div>
+
+        <div class="cat">
+          <div class="cnt">42</div>
+          <h3>Mutant &amp; Hybrid Races</h3>
+          <p>The changed are not the enemy and they are not the heroes. They are a third
+             population with their own claims, their own enclaves, and a peace treaty nobody
+             signed properly.</p>
+          <div class="ex">&ldquo;A widow raising twins &mdash; one changed, one not &mdash; in a town that
+            watches both far too closely &mdash; a bioluminescent cave system claimed by
+            the newly-changed.&rdquo;</div>
+        </div>
+
+        <div class="cat">
+          <div class="cnt">42</div>
+          <h3>Cosmic Cult Apocalypse</h3>
+          <p>Something enormous is awake, and the people who have known longest have built
+             a civilization around worshipping it. The strangest and least-served of the
+             eight.</p>
+          <div class="ex">&ldquo;A knight's squire inheriting vows he is not sure he is capable of
+            keeping &mdash; a converted courthouse now a tribunal for cult crimes, a year
+            into the cult's growing influence.&rdquo;</div>
+        </div>
+
+      </div>
+
+      <p class="lede mt-l">
+        <strong>Forty-two is not a filler number.</strong> It is enough that no reader who
+        buys one saga has any idea how many others you already own &mdash; and enough to
+        keep a whole backlist running in a single apocalypse type if you want to
+        concentrate.
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="orn"><i></i></div>
+
+<!-- ============================= REAL BUILDERS ============================= -->
+<section class="alt">
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">Straight From The Pack</div>
+      <h2>Real Builders. Real Premises.</h2>
+      <p class="lede">
+        A small, unedited selection from the 336. Every one of these is a finished
+        novel's worth of plot, waiting to be built into a world.
+      </p>
+
+      <div class="plotbox mt-l">
+        <div class="vh">#7 &mdash; NUCLEAR WASTELAND</div>
+        <span class="k">PREMISE</span>
+        <span class="v">A healer who trades medicine for information is converting one more
+          patient's secret into one more week of life, and keeping a ledger of what each
+          one cost &mdash; and the settlement's information broker has started copying her
+          ledger and selling entries back to the families named in them.</span>
+        <span class="k">THE TWIST</span>
+        <span class="v">The secret she is protecting is her own. She ended the war &mdash;
+          and the final entry in the ledger is her name.</span>
+        <span class="k">THEMATIC QUESTION</span>
+        <span class="v">Is healing someone a transaction if the price is their ignorance?</span>
+
+        <div class="vh">#169 &mdash; FROZEN EARTH</div>
+        <span class="k">SERIES ENGINE</span>
+        <span class="v">Each book the herd outruns one settlement's claim on it, and the saga
+          traces a migration pattern nobody thought was a message.</span>
+
+        <div class="vh">#211 &mdash; MACHINE UPRISING</div>
+        <span class="k">THE TWIST</span>
+        <span class="v">Her husband wrote the machine's decision rules for a house that
+          learned to care for the people inside it &mdash; and every weapon the resistance
+          could build from his notebooks is a weapon built out of a promise to a family.</span>
+        <span class="k">THEMATIC QUESTION</span>
+        <span class="v">What is owed to the intention behind a tool, once the tool is in
+          other hands?</span>
+
+        <div class="vh">#295 &mdash; COSMIC CULT APOCALYPSE</div>
+        <span class="k">THE TWIST</span>
+        <span class="v">The vows he is failing to keep are the order's own. They were written
+          for a war against an enemy that has now agreed to stop &mdash; and the order has
+          decided that a squire who cannot keep a vow to a peace is a squire who cannot
+          keep any vow.</span>
+        <span class="k">THEMATIC QUESTION</span>
+        <span class="v">What is a vow to, once the thing you swore it against has become
+          reasonable?</span>
+      </div>
+
+      <p class="lede mt-l">
+        <strong>Read those twists again.</strong> None of them is a monster reveal. They are
+        structural reversals &mdash; each one turns the entire premise inside out and hands
+        the series a new engine for every book that follows.
+      </p>
+      <p class="lede mt-s">
+        That is the difference between a pack of prompts and a pack of stories.
+        <span class="hl">You are not asking an AI what to write. You already know.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ============================= MEMORY ============================= -->
+<section>
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">The Memory Problem</div>
+      <h2>Book 5 Can Never Contradict Book 2</h2>
+      <p class="lede">
+        This is the part that kills most AI fiction. Not the prose &mdash; the prose is
+        fine for a scene. It is Book 6 that quietly rewrites the sister, moves the
+        capital, and ages the wrong person.
+      </p>
+      <p class="lede mt-s">
+        Every builder closes with a step most prompt packs skip entirely: after each
+        finished book, the engine produces a <strong>&ldquo;What's Now True&rdquo;</strong>
+        record &mdash; a running state of the world that you carry forward.
+      </p>
+
+      <div class="code mt-l"><span class="c">=== BOOK COMPLETE ===</span>
+
+<span class="h">=== WHAT'S NOW TRUE ===</span>
+
+<span class="a">CAST STATE</span>
+  - Every surviving named character, with their age in the current book
+  - Who knows which secret, and who merely suspects it
+  - What each faction has gained, lost, or concealed since the last book
+
+<span class="a">WORLD STATE</span>
+  - Which settlements exist, which have fallen, and on what date
+  - The current cost of fuel, medicine, clean water, ammunition
+  - What the agreed rules of the world are, and whether anyone is cheating
+
+<span class="a">PROMISE STATE</span>
+  - Every open thread from the previous book
+  - Which threads this book advanced, which it buried, which it opened
+  - The exact question Book N+1 must answer
+
+<span class="a">CARRY FORWARD</span>
+  - Paste this entire block into the next book's Step 1.
+  - The new book may not contradict a single line above.</div>
+
+      <p class="lede mt-l">
+        That block is the whole product in miniature. <strong>Continuity stops being
+        something you hope for and becomes something you enforce.</strong>
+      </p>
+      <p class="lede mt-s">
+        Run Book 1. Carry the block. Run Book 2. Carry it again. By Book 4 your AI is no
+        longer guessing what happened in Book 1 &mdash; it is reading a record you and it
+        wrote together.
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="orn"><i></i></div>
+
+<!-- ============================= HOW TO USE ============================= -->
+<section class="alt">
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">The Workflow</div>
+      <h2>How To Use These Prompts</h2>
+      <p class="lede">
+        Four steps per book. You approve everything. Nothing is written that you have
+        not seen planned first.
+      </p>
+
+      <ol class="steps mt-l">
+        <li>
+          <h3 class="step-h">Pick a builder and paste Step 1</h4>
+          <p>Open the sheet, choose any of the 336 rows, and paste the whole prompt into
+             your AI tool &mdash; Claude, ChatGPT, Gemini, or any capable model. The
+             apocalypse type, plot, protagonist, era and location are already inside it.
+             You do not fill in a single field.</p>
+        </li>
+        <li>
+          <h3 class="step-h">Build the world, characters and saga</h4>
+          <p>Run Step 1, paste the result into Step 2, then Step 3. Each step reads the
+             one before it. This is where the factions, the locations, and the
+             multi-book trajectory get built on top of a plot that is already fixed.</p>
+        </li>
+        <li>
+          <h3 class="step-h">Outline the book &mdash; then approve it</h4>
+          <p>Run Step 4. You get a chapter-by-chapter outline. <strong>Not one word of
+             prose is written until you say so.</strong> Change anything. Re-run it.
+             You are the editor-in-chief; the engine is the workhorse.</p>
+        </li>
+        <li>
+          <h3 class="step-h">Run Step 5 &mdash; and write the next one</h4>
+          <p>The actual novel comes back as full prose chapters. When it stops at a
+             chapter boundary, say <em>Continue</em>. When the book ends, take the
+             &ldquo;What's Now True&rdquo; block, carry it into Book 2, and repeat.</p>
+        </li>
+      </ol>
+
+      <div class="card feature mt-m">
+        <h3>One note on tools</h3>
+        <p>These prompts are written for a long context window, because that is what the
+           job requires &mdash; a five-step build where every step must remember every
+           earlier step. A desktop agent with file access (Claude Code, ChatGPT's
+           coding agent, or anything with a persistent workspace) is the smoothest
+           experience, because it can hold the canon and the
+           &ldquo;What's Now True&rdquo; record between sessions. In a plain chat window
+           it still works &mdash; you just carry the state forward yourself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="orn"><i></i></div>
+
+<!-- ============================= BUSINESS ============================= -->
+<section class="alt">
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">The Playbook</div>
+      <h2>How To Turn 336 Prompts Into A Publishing Backlist</h2>
+      <p class="lede">
+        You are not buying prompts. You are acquiring a production line for a category
+        with permanent demand and a supply problem.
+      </p>
+      <p class="lede mt-s">
+        <strong>The #1 reason saga authors stall is speed.</strong> A series asks readers
+        to commit to Book 2 &mdash; and if Book 2 takes a year, the commitment dies.
+      </p>
+
+      <div class="grid g-2 mt-l">
+        <div class="card">
+          <span class="num">01</span>
+          <h3>The pilot test</h3>
+          <p>Networks never order a whole season blind &mdash; they shoot pilots. Pick
+             three categories, build only Book 1 of each, publish all three in the same
+             month, then let page reads pick your winner.</p>
+        </div>
+        <div class="card">
+          <span class="num">02</span>
+          <h3>Preorder the next book</h3>
+          <p>Put the next volume on preorder before the current one ends. Every
+             &ldquo;The End&rdquo; now lands on a buy button instead of a wait.</p>
+        </div>
+        <div class="card">
+          <span class="num">03</span>
+          <h3>Own the shelf you build in</h3>
+          <p>Saga readers are the most committed binge-readers in fiction. A reader who finishes
+             Book 1 and finds Books 2&ndash;4 waiting is exactly the behavior subscription
+             and series boxes reward.</p>
+        </div>
+        <div class="card">
+          <span class="num">04</span>
+          <h3>Price the doorway low</h3>
+          <p>Book 1 at $0.99 to $2.99 is an open door. Books 2 onward at $3.99&ndash;$4.99.
+             The doorway costs you pennies; the saga behind it pays for the house.</p>
+        </div>
+        <div class="card">
+          <span class="num">05</span>
+          <h3>Let the words sell twice</h3>
+          <p>Books 1&ndash;3 as a box set. The completed saga as an omnibus. Same prose,
+             three more SKUs, no extra writing.</p>
+        </div>
+        <div class="card">
+          <span class="num">06</span>
+          <h3>Never run out of world</h3>
+          <p>When a saga wins, the market wants the next book in that world &mdash; and
+             you have 335 other builders already sitting in a spreadsheet, each one a
+             different apocalypse, a different era, a different set of ruins.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ============================= FAQ ============================= -->
+<section>
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">Questions</div>
+      <h2>Before You Buy</h2>
+      <div class="faq mt-l">
+        <div class="qa">
+          <button>Do I need to know how to write a novel?</button>
+          <div class="ans"><div class="in">No. The builders supply the plot, the structure,
+            the world, the factions, the chapter breakdown and the prose. You supply the
+            judgment calls &mdash; which builder, which outline changes, whether a
+            chapter is good. That is an editorial job, not a craft one, and it is the job
+            that actually matters.</div></div>
+        </div>
+        <div class="qa">
+          <button>Is this just &ldquo;write me a post-apocalyptic novel&rdquo; with extra steps?</button>
+          <div class="ans"><div class="in">No, and the difference is the fixed plot block
+            at the top of every row. A premise, a want, an obstacle, a twist, a series
+            engine and a thematic question are decided before you paste anything. A
+            generic prompt asks the AI to invent a story and then live with whatever it
+            invents. These ask it to build a world around a plot that is already good.</div></div>
+        </div>
+        <div class="qa">
+          <button>Will Book 2 contradict Book 1?</button>
+          <div class="ans"><div class="in">That is the specific problem this pack is
+            built to solve. Every builder ends with a &ldquo;What's Now True&rdquo; state
+            block &mdash; cast, world, and open promises &mdash; that you carry into the
+            next book. The saga block itself is also locked at the top of the prompt, so
+            the world cannot quietly re-interpret its own premise.</div></div>
+        </div>
+        <div class="qa">
+          <button>How long is one book?</button>
+          <div class="ans"><div class="in">That is decided in Step 4, by the outline you
+            approve. Build a 40,000-word book, or a 70,000-word one, or a series of
+            novellas. The engine writes in full prose chapters and stops at a chapter
+            boundary, so you say &ldquo;Continue&rdquo; and it keeps going.</div></div>
+        </div>
+        <div class="qa">
+          <button>What AI tools does this work with?</button>
+          <div class="ans"><div class="in">Any model capable of long-form generation,
+            but the job specifically needs a large context window &mdash; the five-step
+            build has to remember everything from every earlier step. A desktop agent
+            with a persistent workspace is the smoothest option; a plain chat window
+            works fine if you carry the state block forward yourself.</div></div>
+        </div>
+        <div class="qa">
+          <button>Are the 336 plots actually different?</button>
+          <div class="ans"><div class="in">Yes. Every premise, want, obstacle, twist,
+            series engine and thematic question is unique to its own row, and so is every
+            protagonist concept, time period and starting location. No builder shares a
+            plot with another.</div></div>
+        </div>
+        <div class="qa">
+          <button>What format do I get?</button>
+          <div class="ans"><div class="in">A single spreadsheet with a Read Me sheet, the
+            full 336-row builder sheet (each row a complete, ready-to-paste prompt with
+            the plot breakdown and the 5-step builder merged into one cell), and a
+            category summary. Every row is self-contained &mdash; you copy the cell and
+            paste it.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="tape" role="presentation"></div>
+
+<!-- ============================= GUARANTEE ============================= -->
+<section>
+  <div class="wrap">
+    <div class="rv">
+      <div class="guarantee">
+        <div class="seal">Open Access &mdash; No Locked Box</div>
+        <h3 class="mt-m">Read Every Prompt Before You Commit</h3>
+        <p class="lede mt-s">
+          These are text files. Nothing is shipped in a locked box. Open the sheet, read
+          a few rows, paste one in, and judge the output for yourself before you build
+          anything.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= CLOSER ============================= -->
+<section class="closer" id="buy">
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow center" style="justify-content:center">The Last Part</div>
+      <h2>The World Is Already Over.<br>You Just Have To Decide Which One.</h2>
+      <p class="lede" style="max-width:720px;margin:0 auto">
+        You can wait another year. You can watch other authors build entire backlists out
+        of a category this hungry, and stay on the sidelines wondering what if.
+      </p>
+      <p class="lede mt-s" style="max-width:720px;margin:18px auto 0">
+        Or you can open the sheet tonight, pick a ruin, and paste one prompt.
+      </p>
+
+      <div class="mt-l">
+        <!-- ===== WARRIORPLUS BUY BUTTON ===== -->
+        <a class="wpbuy" href="https://warriorplus.com/o2/buy/cqlq33/bvn22v/v96tms"
+           data-cta="closer" target="_top" rel="noopener">
+          <img src="https://warriorplus.com/o2/btn/fn100011000/cqlq33/bvn22v/475518"
+               alt="Get Instant Access to 336 Agentic Prompts for Post-Apocalyptic Saga Builders"
+               width="443" height="202" style="border:0;display:block">
+        </a>
+        <p class="cta-note">336 saga builders. 8 apocalypse types. Instant download.</p>
+
+        <!-- WarriorPlus fills this with the official disclaimer text -->
+        <div class="wplus_spdisclaimer"></div>
+      </div>
+
+      <div class="grid g-2 mt-l" style="text-align:left;max-width:800px;margin-left:auto;margin-right:auto">
+        <div class="card">
+          <h3>What you get</h3>
+          <p>336 complete, ready-to-paste saga builders &mdash; each one carrying a unique
+             novel-grade plot, a fixed apocalypse, a protagonist, an era, a starting
+             location, and the full five-step saga builder underneath it.</p>
+        </div>
+        <div class="card">
+          <h3>What you can build</h3>
+          <p>A complete post-apocalyptic series with a world that holds together, a cast
+             that stays itself, a plot that escalates, and continuity that survives past
+             the first book.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= AUTHOR ============================= -->
+<section>
+  <div class="wrap">
+    <div class="author rv">
+      <div class="ph">
+        <img src="ayoub.jpg" width="112" height="112" decoding="async"
+             alt="Ayoub Kadi, known as PromptKing">
+      </div>
+      <div class="who">
+        <div class="nm">Ayoub Kadi</div>
+        <div class="handle">PromptKing</div>
+        <div class="role">Creator and publisher for WarriorPlus</div>
+        <p style="color:var(--bone-2);margin-top:16px">
+          If you have any questions, or anything in this pack that does not work the way
+          you expected, just reply to your receipt email &mdash; or write to
+          <a href="mailto:ayoubebay1@gmail.com">ayoubebay1@gmail.com</a> &mdash; and you will get a
+          real answer from a real person. I build these prompt systems because I got tired
+          of AI losing the thread halfway through a series.
+        </p>
+        <p style="color:var(--bone-3);font-size:14px;margin-top:10px">
+          All the best,<br><strong style="color:var(--bone-2)">Ayoub Kadi</strong><br>
+          <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase">PromptKing</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="card feature mt-l rv" style="text-align:left">
+      <h3>P.S.</h3>
+      <p style="font-size:16px">
+        The reason this pack exists is not that AI cannot write a chapter. It can.
+        It is that <strong>AI cannot remember one</strong> &mdash; and post-apocalyptic
+        saga fiction lives or dies on the details that prove it remembers.
+      </p>
+      <p style="font-size:16px;margin-top:14px">
+        Which settlement lost power first. Who has the working radio. What the machines
+        were actually built to do. Whether the sister is still alive. Every one of those
+        is a promise, and a saga is nothing but a stack of promises you intend to keep.
+      </p>
+      <p style="font-size:16px;margin-top:14px">
+        So this pack does one thing: it makes the AI write the promises down, and then
+        makes it read them back before every chapter.
+        <strong>That is the entire difference between a one-off story and a series people
+        binge for three years.</strong>
+      </p>
+      <p style="font-size:16px;margin-top:14px">
+        You are not commissioning a chapter. You are opening a world &mdash; and there
+        are 336 of them sitting in a spreadsheet, waiting for you to pick one.
+      </p>
+      <p style="margin-top:24px">
+        <a href="#buy" class="btn" style="font-size:18px;padding:15px 34px;width:auto">Get Your Copy</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================= FOOTER ============================= -->
+<footer>
+  <div class="wrap">
+    <p style="font-family:'Barlow Condensed',sans-serif;font-size:22px;text-transform:uppercase;letter-spacing:.06em;color:var(--bone-3)">
+      336 Agentic Prompts for Post-Apocalyptic Saga Builders
+    </p>
+    <p style="margin-top:8px;font-family:'Barlow Condensed',sans-serif;font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:#ff8c4b">
+      By Ayoub Kadi, PromptKing
+    </p>
+    <div class="f-links">
+      <a href="privacy.html">Privacy Policy</a>&middot;
+      <a href="disclaimers.html">Disclaimers</a>&middot;
+      <a href="support.html">Support</a>&middot;
+      <a href="terms.html">Terms of Sale</a>
+    </div>
+    <p class="dis">
+      &copy; <span id="yr">2026</span> Ayoub Kadi (PromptKing). All rights reserved. This product is a collection
+      of text prompts intended for use with third-party artificial intelligence tools.
+      It is not affiliated with, endorsed by, or sponsored by any AI provider. Any
+      output generated using these prompts is yours alone; you are responsible for
+      reviewing, editing, and complying with the terms of whichever tool you use.
+      Fiction generated with these prompts may require fact-checking and independent
+      editing before publication. Not legal, tax, or publishing advice.
+    </p>
+
+    <!-- ===== ADD-ON OFFER PAGES =====
+         These point at the four upsell sales pages in this folder:
+         upsell-727.html, upsell-2945.html, upsell-6259.html, upsell-20099.html
+         Each of those has its own buy button and its own "No thanks" skip link.
+
+         TO USE WARRIORPLUS NATIVE ORDER BUMPS INSTEAD, replace each href below
+         with the bump URL from your WarriorPlus dashboard. The pages stay
+         published either way - nothing else depends on these hrefs. -->
+    <nav class="upsells" aria-label="Additional offers">
+      <a href="upsell-727.html" data-upsell="727" target="_top" rel="noopener">727</a>
+      <a href="upsell-2945.html" data-upsell="2945" target="_top" rel="noopener">2945</a>
+      <a href="upsell-6259.html" data-upsell="6259" target="_top" rel="noopener">6259</a>
+      <a href="upsell-20099.html" data-upsell="20099" target="_top" rel="noopener">20099</a>
+    </nav>
+    <!-- ===== END ADD-ON OFFER PAGES ===== -->
+  </div>
+</footer>
+
+<!-- ============================= STICKY CTA ============================= -->
+<div class="sticky" id="sticky">
+  <div class="wrap">
+    <div class="in">
+      <div class="txt">
+        <b>336 Agentic Prompts for Post-Apocalyptic Sagas</b>
+        <span>8 apocalypse types. 42 builders each. Instant access.</span>
+      </div>
+      <a class="btn" href="#buy" data-cta="sticky">Get Instant Access</a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  // Sticky bar
+  var st=document.getElementById('sticky');
+  var trigger=document.querySelector('.hero');
+  function onScroll(){
+    var y=window.scrollY||0;
+    var h=trigger?trigger.offsetHeight:600;
+    st.classList.toggle('show', y > h*0.7);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+
+  // Hide the sticky CTA once the footer is reached, so it never covers
+  // the legal text or the upsell links at the bottom of the page.
+  var foot=document.querySelector('footer');
+  if(foot && 'IntersectionObserver' in window){
+    var fo=new IntersectionObserver(function(es){
+      es.forEach(function(e){ st.classList.toggle('hidden', e.isIntersecting); });
+    },{rootMargin:'0px 0px -70px 0px',threshold:0});
+    fo.observe(foot);
+  }
+
+  // Reveal on scroll
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    els.forEach(function(el){io.observe(el)});
+  }else{
+    els.forEach(function(el){el.classList.add('in')});
+  }
+
+  // FAQ accordion
+  document.querySelectorAll('.qa button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var q=b.parentElement, open=q.classList.contains('open');
+      document.querySelectorAll('.qa.open').forEach(function(o){
+        o.classList.remove('open');
+        o.querySelector('.ans').style.maxHeight='';
+      });
+      if(!open){ q.classList.add('open'); q.querySelector('.ans').style.maxHeight=q.querySelector('.ans').scrollHeight+'px'; }
+    });
+  });
+
+  // Year
+  var y=document.getElementById('yr'); if(y) y.textContent=new Date().getFullYear();
+
+  // Smooth anchor for the sticky bar
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var t=document.querySelector(a.getAttribute('href'));
+      if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth',block:'start'}); }
+    });
+  });
+})();
+</script>
+
+<!-- ===== WARRIORPLUS SALES PAGE CODE — required, install once before </body> ===== -->
+<script type="text/javascript" src="https://warriorplus.com/o2/js/bvn22v" defer></script>
+</body>
+</html>
